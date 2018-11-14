@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+        <settings>
+            <!-- 配置关闭缓存 -->
+
+
+            <setting value="false" name="cacheEnabled"/>
+
+            <setting value="true" name="mapUnderscoreToCamelCase"/>
+
+            <setting value="true" name="useGeneratedKeys"/>
+
+            <setting value="REUSE" name="defaultExecutorType"/>
+
+            <!-- 事务超时时间，。。。。 -->
+
+
+            <setting value="600" name="defaultStatementTimeout"/>
+        </settings>
+       <!-- 设置别名-->
+        <typeAliases>
+            <typeAlias type="com.huawei.pojo.User" alias="user"/>
+        </typeAliases>
+      <!--  mpper对应xml位置-->
+        <mappers>
+            <mapper resource="mapper/user.xml"/>
+        </mappers>
+
+</configuration>

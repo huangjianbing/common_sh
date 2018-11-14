@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huawei.mapper.UserMapper">
+
+    <select id="getAllUser" resultType="user">
+        select id,userName,sex,phone,email from user where active=1
+    </select>
+    <select id="getUserById" resultType="user">
+        select id,userName,sex,img,phone,email,address,remark from user where id =#{id}
+    </select>
+    <select id="getUserByPhone" resultType="user">
+        select id,userName,sex,img,phone,email,address from user where id =#{phone}
+    </select>
+    <update id="updateUser">
+        update user
+        <set>
+            <if test="phone !=null and phone != '' ">
+                phone = #{phone},
+            </if>
+            <if test="email !=email and email != '' ">
+                name = #{name},
+            </if>
+            <if test="address !=null and address != '' ">
+                address = #{address},
+            </if>
+            <if test="img !=null and img != '' ">
+                img = #{img},
+            </if>
+            <if test="sex !=null and img != '' ">
+                sex = #{sex},
+            </if>
+            <if test="remark !=null and remark != ''">
+                remark = #{remark}
+            </if>
+        </set>
+        where id = #{id} and active=1
+    </update>
+    <update id="active">
+        UPDATE user set active=1 where phone=#{phone}
+    </update>
+    <delete id="delete" >
+        delete from user where phone=#{phone}
+    </delete>
+    <insert id="registerUser">
+        insert into user
+        ( id, userName,password,phone )
+        values( #{id}, #{userName}, #{password}, #{phone} )
+    </insert>
+    <select id="login" resultType="user">
+        select id from user where phone=#{phone} and password=#{password}
+    </select>
+</mapper>
