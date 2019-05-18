@@ -1,0 +1,1 @@
+1.linux使用脚本时需转换格式 如 vi InstallMysql.sh 后 set ff=unix

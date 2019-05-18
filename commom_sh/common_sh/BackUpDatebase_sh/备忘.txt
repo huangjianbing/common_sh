@@ -1,0 +1,2 @@
+1.使用备份数据库脚本时，需为上述脚本赋予执行权限如：chmod 777 BackUpDatabase.sh
+2.需要开始定时任务。centos 对应的时crontab 让任务 。/etc/crontab

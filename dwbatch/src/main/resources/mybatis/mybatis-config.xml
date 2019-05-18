@@ -22,7 +22,7 @@
         </settings>
        <!-- 设置别名-->
         <typeAliases>
-            <typeAlias type="com.huawei.pojo.User" alias="user"/>
+            <typeAlias type="com.dba.pojo.User" alias="user"/>
         </typeAliases>
       <!--  mpper对应xml位置-->
         <mappers>
